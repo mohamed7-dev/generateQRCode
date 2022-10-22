@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #242b40;
+  --secondary-color: #31455c;
+  --tertiary-color: #e78331;
+  --quaternary-color: #cddde7;
+  --quinary-color: #5cc586;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Righteous", cursive;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.wrapper {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.wrapper.show {
+  height: auto;
+}
+
+.wrapper .input-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.input-area .app-title {
+  width: fit-content;
+}
+
+.input-area .app-title h1 {
+  color: var(--quaternary-color);
+  text-transform: capitalize;
+}
+
+.input-area .input-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field input {
+  outline: 0;
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.input-field input[type="url"] {
+  background-color: var(--quaternary-color);
+  padding: 5px;
+  caret-color: var(--tertiary-color);
+  color: var(--primary-color);
+}
+
+.input-field input[type="url"]::placeholder {
+  color: var(--primary-color);
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.input-field input[type="submit"] {
+  background-color: var(--tertiary-color);
+  color: var(--quaternary-color);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.input-field input[type="submit"]:hover {
+  background-color: var(--quaternary-color);
+  color: var(--tertiary-color);
+}
+
+.wrapper .qr-area {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in;
+}
+
+.wrapper.show .qr-area {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.qr-area img {
+  padding: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
